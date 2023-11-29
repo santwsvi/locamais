@@ -1,0 +1,1 @@
+Código da locação: 1 | Nome do cliente: Joao | Código do cliente: 1 | Nome do veículo: Fiat Palio | Data de retirada:  | Data de devolução: 30/11/2023 | Diárias: -1552565182 | Seguro: 1 |
