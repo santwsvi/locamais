@@ -1,3 +1,3 @@
 # Trabalho Interdisciplinar: LocaMais
  
-### Cadastro de cliente
+### Cadastro de locação
