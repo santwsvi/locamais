@@ -5,7 +5,9 @@
 ##### Alunos integrantes da equipe: 
 
 [Lucas Cerqueira Azevedo](https://github.com/lucascazevedo)
+
 [Rafael Cerqueira Azevedo](https://github.com/rafcaz)
+
 [Victor Gabriel Santos Rocha](https://github.com/visantws)
 
 ##### Professores:
