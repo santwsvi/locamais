@@ -12,5 +12,6 @@
 
 ##### Professores:
 
-Aline Norberta de Brito - Fundamentos de Engenharia de Software
-Roberto Felipe Dias Ferreira da Rocha - Algoritmos e Estruturas de Dados I
+Aline Norberta de Brito (Fundamentos de Engenharia de Software)
+
+Roberto Felipe Dias Ferreira da Rocha (Algoritmos e Estruturas de Dados I)
