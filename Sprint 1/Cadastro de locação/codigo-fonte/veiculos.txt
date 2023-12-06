@@ -1,1 +1,0 @@
-Código do veiculo: 1 | Descrição : Fiat Palio | Modelo : 1996 16V | Cor : Prata | Placa: ABC1D23 | Valor diária: 100,00 | Quantidade de ocupantes: 4 | Status: dispon¡vel |
