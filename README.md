@@ -10,7 +10,7 @@
 
 [Rafael Cerqueira Azevedo](https://github.com/rafcaz)
 
-[Victor Gabriel Santos Rocha](https://github.com/visantws)
+[Victor Gabriel Santos Rocha](https://github.com/santwsvi)
 
 ##### Professores:
 
