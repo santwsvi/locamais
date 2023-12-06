@@ -1,6 +1,7 @@
 # Trabalho Interdisciplinar: LocaMais
  
-### Aqui está o desenvolvimento completo e documentação do nosso projeto. Deve-se observar o README.md de cada pasta de trabalho para dar o seguimento correto ao desenvolvimento da aplicação. O link a seguir contêm todas as especificações exigidas para o desenvolvimento do software da LocaMais: https://pucminas.instructure.com/courses/157250/assignments/830474
+### Aqui está o desenvolvimento completo e documentação do nosso projeto. 
+### O link a seguir contêm todas as especificações exigidas para o desenvolvimento do software da LocaMais: https://pucminas.instructure.com/courses/157250/assignments/830474
 
 ##### Alunos integrantes da equipe: 
 
