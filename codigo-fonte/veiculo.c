@@ -75,6 +75,11 @@ void cadastrarVeiculo(Veiculo veiculos[], int *totalVeiculos) {
     }
 }
 
+void exibirDetalhesVeiculo(Veiculo veiculo) {
+    printf("Código: %d | Descrição: %s | Modelo: %s | Cor: %s | Placa: %s | Valor Diária: %.2f | Ocupantes: %d | Status: %s\n",
+           veiculo.codigo, veiculo.descricao, veiculo.modelo, veiculo.cor, veiculo.placa, veiculo.valor_diaria, veiculo.ocupantes, veiculo.status);
+}
+
 void carregarVeiculos(Veiculo veiculos[], int *totalVeiculos) {
     FILE *arquivo = fopen(ARQUIVO_VEICULOS, "rb");
     if (arquivo != NULL) {
