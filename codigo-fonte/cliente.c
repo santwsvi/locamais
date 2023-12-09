@@ -69,6 +69,18 @@ void exibirDetalhesCliente(Cliente cliente) {
     printf("Código: %d | Nome: %s | Endereço: %s | Telefone: %s\n", cliente.codigo, cliente.nome, cliente.endereco,cliente.telefone);
 }
 
+void listarClientes(Cliente clientes[], int totalClientes) {
+    if (totalClientes > 0) {
+        printf("===== Relatório de Clientes =====\n");
+        for (int i = 0; i < totalClientes; i++) {
+            // Imprimir os detalhes do cliente
+            exibirDetalhesCliente(clientes[i]);
+        }
+    } else {
+        printf("Nenhum cliente cadastrado.\n");
+    }
+}
+
 void carregarClientes(Cliente clientes[], int *totalClientes) {
     FILE *arquivo = fopen(ARQUIVO_CLIENTES, "rb");
     if (arquivo != NULL) {
