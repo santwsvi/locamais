@@ -10,7 +10,6 @@ void cadastrarLocacao(Locacao locacoes[], int *totalLocacoes, Cliente clientes[]
 void exibirLocacoes(const Locacao locacoes[], int totalLocacoes, const Cliente clientes[], int totalClientes, const Veiculo veiculos[], int totalVeiculos);
 void carregarLocacoes(Locacao locacoes[], int *totalLocacoes);
 Veiculo *encontrarVeiculo(Veiculo veiculos[], int totalVeiculos, int codigo);
-void baixaLocacao(Locacao locacoes[], int *totalLocacoes, Veiculo veiculos[], int totalVeiculos);
 
 
 #endif // LOCACAO_H

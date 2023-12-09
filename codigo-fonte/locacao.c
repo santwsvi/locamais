@@ -7,11 +7,8 @@
 #include <string.h>
 #include <time.h>
 
-#define MULTA_PERCENTUAL 0.05
-#define MULTA_DIARIA 30.0
 #define MAX_LOCACOES 100
 #define ARQUIVO_LOCACOES "locacoes.dat"
-#define ARQUIVO_VEICULOS "veiculos.dat"
 #define LOCACOES_TXT "locacoes.txt"
 #define HORARIO_COMERCIAL_INICIO 8
 #define HORARIO_COMERCIAL_FIM 18
@@ -145,107 +142,4 @@ Veiculo *encontrarVeiculo(Veiculo veiculos[], int totalVeiculos, int codigo) {
         }
     }
     return NULL;
-}
-
-
-
-// Função auxiliar para persistir as alterações no arquivo
-void salvarLocacoes(Locacao locacoes[], int totalLocacoes) {
-    FILE *arquivo = fopen(ARQUIVO_LOCACOES, "wb");
-    if (arquivo != NULL) {
-        fwrite(locacoes, sizeof(Locacao), totalLocacoes, arquivo);
-        fclose(arquivo);
-    } else {
-        printf("Erro ao abrir o arquivo de locações.\n");
-    }
-}
-
-// Função auxiliar para persistir as alterações no estado do veículo
-void salvarVeiculos(Veiculo veiculos[], int totalVeiculos) {
-    FILE *arquivo = fopen(ARQUIVO_VEICULOS, "wb");
-    if (arquivo != NULL) {
-        fwrite(veiculos, sizeof(Veiculo), totalVeiculos, arquivo);
-        fclose(arquivo);
-    } else {
-        printf("Erro ao abrir o arquivo de veículos.\n");
-    }
-}
-
-void baixaLocacao(Locacao locacoes[], int *totalLocacoes, Veiculo veiculos[], int totalVeiculos) {
-
-int codigoLocacao;
-    printf("Digite o código da locação a ser encerrada: ");
-    scanf("%d", &codigoLocacao);
-
-    int indexLocacao = -1;
-    for (int i = 0; i < *totalLocacoes; i++) {
-        if (locacoes[i].codigo == codigoLocacao) {
-            indexLocacao = i;
-            break;
-        }
-    }
-
-    if (indexLocacao == -1) {
-        printf("Locação não encontrada.\n");
-        return;
-    }
-
-    // Obter a data atual
-    time_t now;
-    time(&now);
-    struct tm *localAtual = localtime(&now);
-    char dataAtual[11];  // formato: dd/mm/aaaa
-    strftime(dataAtual, sizeof(dataAtual), "%d/%m/%Y", localAtual);
-
-    printf("Data Atual: %s\n", dataAtual);
-
-    // Obter a data de devolução prevista
-    struct tm localDevolucao;
-    sscanf(locacoes[indexLocacao].data_devolucao, "%d/%d/%d", &localDevolucao.tm_mday, &localDevolucao.tm_mon, &localDevolucao.tm_year);
-    localDevolucao.tm_mon -= 1;  // Reduzir 1 do mês, pois a estrutura tm utiliza meses de 0 a 11
-    localDevolucao.tm_year -= 1900;  // Ajustar o ano para contar a partir de 1900
-
-    char dataDevolucaoPrevista[11];
-    strftime(dataDevolucaoPrevista, sizeof(dataDevolucaoPrevista), "%d/%m/%Y", &localDevolucao);
-    printf("Data Devolução Prevista: %s\n", dataDevolucaoPrevista);
-
-int diasAtraso = calcularDiferencaDias(dataDevolucaoPrevista, dataAtual);
-    printf("Dias de Atraso: %d\n", diasAtraso);
-
-    double valorTotal = 0;
-
-    // Se houver dias de atraso, calcular a multa
-    if (diasAtraso > 0) {
-        // Calcular multa por atraso
-        double multa = veiculos[indexLocacao].valor_diaria * MULTA_PERCENTUAL * diasAtraso + MULTA_DIARIA * diasAtraso;
-        printf("Multa por atraso: R$ %.2lf\n", multa);
-
-        // Adicionar multa ao valor total a ser pago
-
-        valorTotal = valorTotal + multa;
-
-    }
-
-    strcpy(locacoes[indexLocacao].data_devolucao, dataAtual);
-
-    // Atualizar o status do veículo
-    int codigoVeiculo = locacoes[indexLocacao].codigo_veiculo;
-    for (int i = 0; i < totalVeiculos; i++) {
-        if (veiculos[i].codigo == codigoVeiculo) {
-            strcpy(veiculos[i].status, "Disponível");
-            // Persistir alterações no estado do veículo
-            salvarVeiculos(veiculos, totalVeiculos);
-            break;
-        }
-    }
-
-    int diasLocacao = locacoes[indexLocacao].qtd_dias;
-
-    valorTotal += veiculos[indexLocacao].valor_diaria * diasLocacao;
-
-    printf("Valor total a ser pago: R$ %.2lf\n", valorTotal);
-
-
-    // Persistir as alterações no arquivo
-    salvarLocacoes(locacoes, *totalLocacoes);
 }
