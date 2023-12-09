@@ -28,6 +28,7 @@ typedef struct {
     int seguro;
     int codigo_cliente;
     int codigo_veiculo;
+    double valor_diaria;
 } Locacao;
 
 
