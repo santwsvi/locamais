@@ -1,19 +1,21 @@
-# Trabalho Interdisciplinar: LocaMais
- 
-### Aqui está o desenvolvimento completo e documentação do nosso projeto. 
+# LocaMais
 
-### O link a seguir contêm todas as especificações exigidas para o desenvolvimento do software da LocaMais: https://pucminas.instructure.com/courses/157250/assignments/830474
+Este é um projeto de trabalho interdisciplinar desenvolvido para as disciplinas de Algoritmos e Estruturas de Dados I e Fundamentos de Engenharia de Software. O desenvolvimento em questão consiste em um sistema de gerenciamento de locações de veículos para a empresa **LocaMais**, com foco na filial localizada em **Confins/MG**. A necessidade surgiu devido à ausência de um sistema informatizado, o que gerava diversos problemas operacionais, como a dificuldade de verificar a disponibilidade de veículos e o controle de locações realizadas por clientes.
 
-##### Alunos integrantes da equipe: 
+O objetivo principal do sistema é permitir o gerenciamento eficiente das locações, baseando-se em diárias com quilometragem livre. O software foi implementado na linguagem **C**, priorizando a simplicidade, a confiabilidade e o atendimento das necessidades específicas da locadora.
 
-[Lucas Cerqueira Azevedo](https://github.com/lucascazevedo)
+## Funcionalidades Implementadas
+- Cadastro de veículos disponíveis para locação.
+- Registro de locações realizadas, associando veículos e clientes.
+- Consulta de disponibilidade de veículos para novas locações.
+- Histórico de locações por cliente, possibilitando a análise de frequência e a criação de programas de fidelidade.
+- Relatórios simples de locações realizadas.
+- Controle básico de filiais, focando inicialmente na unidade de Confins.
 
-[Rafael Cerqueira Azevedo](https://github.com/rafcaz)
+## Restrições Consideradas
+- Sistema voltado para controle de locações por diária (sem controle de quilometragem).
+- Simples interface de interação via terminal/console.
+- Armazenamento dos dados em memória (em arquivos, se necessário, para persistência simples).
+- Cadastro manual de veículos e clientes, realizado por meio do próprio sistema.
 
-[Victor Gabriel Santos Rocha](https://github.com/santwsvi)
-
-##### Professores:
-
-Aline Norberta de Brito (Fundamentos de Engenharia de Software)
-
-Roberto Felipe Dias Ferreira da Rocha (Algoritmos e Estruturas de Dados I)
+O desenvolvimento buscou atender à necessidade de informatizar o processo de locações de forma prática, melhorando o atendimento ao cliente e proporcionando uma base para futuras expansões do sistema.
